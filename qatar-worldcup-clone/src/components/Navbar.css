@@ -1,24 +1,29 @@
 nav {
-  background-image: url("../assets/images/mainpage/qatar_background.png");
-  height: 59px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo__container {
-  display: flex;
-  flex: 1;
+  background: url("../assets/images/mainpage/qatar_background.png");
 }
 
 .nav__container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 59px;
+}
+
+.logo__container {
+  display: flex;
+  flex: 1;
+}
+
+.list__container {
   display: flex;
   flex: 1;
   justify-content: center;
 }
 
 .logo__container {
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 .logo__container > img {
@@ -29,10 +34,10 @@ nav {
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  margin-right: 10px;
+  margin-right: 50px;
 }
 
-.nav__container > li {
+.list__container > li {
   font-size: 20px;
   color: white;
   margin-right: 16px;

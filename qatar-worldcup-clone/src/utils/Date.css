@@ -1,0 +1,12 @@
+.date__container {
+  display: flex;
+}
+
+.day__container {
+  /* background-image: url("../assets/images/mainpage/qatar_background.png"); */
+  background-color: #eee;
+  width: 45px;
+  height: 53px;
+  padding: 2px 11px 9px 11px;
+  font-size: 14px;
+}

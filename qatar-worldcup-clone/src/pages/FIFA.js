@@ -1,7 +1,7 @@
 import React from "react";
 
-const Fifa = () => {
-  return <div>Fifa</div>;
+const FIFA = () => {
+  return <div>FIFA</div>;
 };
 
-export default Fifa;
+export default FIFA;
