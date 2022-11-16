@@ -1,12 +1,46 @@
 .date__container {
   display: flex;
+  cursor: pointer;
+  margin: 20px 0 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .day__container {
-  /* background-image: url("../assets/images/mainpage/qatar_background.png"); */
   background-color: #eee;
-  width: 45px;
-  height: 53px;
+  width: 70px;
+  height: 60px;
   padding: 2px 11px 9px 11px;
+  border-radius: 7px;
   font-size: 14px;
+  margin-right: 10px;
+}
+
+.day-active {
+  background-image: url("../assets/images/mainpage/qatar_background.png");
+}
+
+.month__box {
+  display: flex;
+  margin-top: 5px;
+  color: #bbbaba;
+}
+
+.day__box {
+  display: flex;
+  color: #777575;
+}
+
+.month-active,
+.day-box-active {
+  color: white;
+}
+
+.day__box--date {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.day__box--day {
+  margin-top: 7px;
 }
