@@ -12,7 +12,7 @@ const MatchComponent = ({ data }) => {
               <div className="record">0승 0무 0패</div>
             </div>
             <div>
-              <img src={data.img} alt="" width="60px" />
+              <img src={data.img} alt="" width="80px" />
             </div>
           </div>
         </div>

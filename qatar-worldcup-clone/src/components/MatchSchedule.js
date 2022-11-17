@@ -1,26 +1,32 @@
 import React from "react";
-import Date from "../utils/Date";
 import "./MatchSchedule.css";
+import useMatchInfo from "../context/matchContext";
+import RhombusContainer from "../utils/RhombusContainer";
+import { Link } from "react-router-dom";
 
-const MatchSchedule = ({ matchFilter, matchDate }) => {
+const MatchSchedule = () => {
+  const { isFilter, setIsFilter } = useMatchInfo();
+
   return (
-    <div>
-      <div className="schedule__container">
-        <button className="schedule__button">전체</button>
-        <div className="rhombus__container">
-          <div className="rhombus"></div>
-          <div className="rhombus"></div>
-        </div>
-
-        <button className="schedule__button">조별리그</button>
-        <div className="rhombus__container">
-          <div className="rhombus"></div>
-          <div className="rhombus"></div>
-        </div>
-        <button className="schedule__button">토너먼트</button>
-      </div>
-
-      <Date matchFilter={matchFilter} matchDate={matchDate} />
+    <div className="schedule__container">
+      <button
+        className={
+          isFilter
+            ? "schedule__button"
+            : "schedule__button schedule__button--active"
+        }
+        onClick={() => setIsFilter(false)}
+      >
+        <Link to="/">전체</Link>
+      </button>
+      <RhombusContainer />
+      <button className="schedule__button">
+        <Link to="/league">조별리그</Link>
+      </button>
+      <RhombusContainer />
+      <button className="schedule__button">
+        <Link to="/tournament">토너먼트</Link>
+      </button>
     </div>
   );
 };

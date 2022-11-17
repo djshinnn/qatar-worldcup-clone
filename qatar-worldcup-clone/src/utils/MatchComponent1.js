@@ -8,12 +8,12 @@ const MatchComponent = ({ matchInfo }) => {
       {matchInfo.map((data, idx) => (
         <div className="info__container" key={data.id}>
           <h4>* {data.group} *</h4>
-          <div>
+          <div className="info__box">
             {data.month}.{data.date}. {data.time} 경기전
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className="preview__container">
             <div className="preview__rhombus left"></div>
-            <div className="preview__container">
+            <div className="preview__box">
               <Link to="/preview">
                 <span className="preview__text">프리뷰 &gt;</span>
               </Link>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { date } from "../dummy/text";
 import "./Date.css";
+import useMatchInfo from "../context/matchContext";
+import RhombusContainer from "./RhombusContainer";
 
 const Date = ({ matchFilter, matchDate }) => {
-  const [isFilter, setIsFilter] = useState(true);
+  const { isFilter, setIsFilter } = useMatchInfo();
 
   return (
     <div className="date__container">
@@ -11,7 +13,7 @@ const Date = ({ matchFilter, matchDate }) => {
         return (
           <div
             className={
-              date.matchDateFirst === matchDate
+              date.matchDateFirst === matchDate && isFilter === true
                 ? "day__container day-active"
                 : "day__container"
             }
@@ -26,7 +28,7 @@ const Date = ({ matchFilter, matchDate }) => {
           >
             <div
               className={
-                date.matchDateFirst === matchDate
+                date.matchDateFirst === matchDate && isFilter === true
                   ? "month__box month-active"
                   : "month__box"
               }
@@ -35,7 +37,7 @@ const Date = ({ matchFilter, matchDate }) => {
             </div>
             <div
               className={
-                date.matchDateFirst === matchDate
+                date.matchDateFirst === matchDate && isFilter === true
                   ? "day__box day-box-active"
                   : "day__box"
               }
@@ -45,6 +47,17 @@ const Date = ({ matchFilter, matchDate }) => {
               </span>
               <span className="day__box--day">{date.day}</span>
             </div>
+
+            <RhombusContainer
+              containerStyle={{
+                display: "flex",
+                marginRight: "3px",
+                color: "#D2D2D2",
+                top: "0",
+              }}
+              rhombusStyle={{ marginRight: "3px", backgroundColor: "#C1C1C1" }}
+              matchCount={date.matchCount}
+            />
           </div>
         );
       })}

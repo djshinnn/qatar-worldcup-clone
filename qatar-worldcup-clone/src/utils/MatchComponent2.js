@@ -8,7 +8,7 @@ const MatchComponent = ({ data }) => {
         <div className="match__container2" key={data.id}>
           <div className="record__container right">
             <div>
-              <img src={data.img} alt="" width="60px" />
+              <img src={data.img} alt="" width="80px" />
             </div>
             <div>
               <div>{data.country}</div>

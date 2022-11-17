@@ -4,11 +4,12 @@ import MatchComponent from "../utils/MatchComponent";
 import MatchComponent1 from "../utils/MatchComponent1";
 import MatchComponent2 from "../utils/MatchComponent2";
 import { matchInfo } from "../dummy/text";
+import useMatchInfo from "../context/matchContext";
 
-const Match = ({ data, filteredData, isFilter, matchInfoData, matchDate }) => {
+const Match = ({ data, filteredData, matchInfoData, matchDate }) => {
   const [evenData, setEvenData] = useState([]);
   const [oddData, setOddData] = useState([]);
-  const [isFiltered, setIsFiltered] = useState(false);
+  const { isFilter, setIsFilter } = useMatchInfo();
 
   useEffect(() => {
     if (data) {
@@ -24,18 +25,18 @@ const Match = ({ data, filteredData, isFilter, matchInfoData, matchDate }) => {
 
       setEvenData(evenData);
       setOddData(oddData);
-      setIsFiltered(isFilter);
+      setIsFilter(isFilter);
     }
-  }, [data, filteredData, isFilter, isFiltered]);
+  }, [data, filteredData, isFilter, setIsFilter]);
 
   return (
     <div>
       <div>
-        <h2>{matchDate}</h2>
+        {isFilter ? <h2>{matchDate}</h2> : <h2>전체 일정</h2>}
 
         <div style={{ display: "flex", marginTop: "30px" }}>
           <MatchComponent data={evenData} />
-          {isFiltered ? (
+          {isFilter ? (
             <MatchComponent1 matchInfo={matchInfoData} />
           ) : (
             <MatchComponent1 matchInfo={matchInfo} />
