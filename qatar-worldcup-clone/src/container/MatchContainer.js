@@ -4,7 +4,7 @@ import Match from "../components/Match";
 import "./MatchContainer.css";
 import { matchInfo } from "../dummy/text";
 import useMatchInfo from "../context/matchContext";
-import MatchScheduleContainer from "../components/MatchScheduleContainer";
+import MatchScheduleContainer from "../container/MatchScheduleContainer";
 
 const MatchContainer = () => {
   const [data, setData] = useState([]);
@@ -24,26 +24,54 @@ const MatchContainer = () => {
     getData();
   }, []);
 
-  const matchFilter = ({ matchDateFirst }) => {
-    const matchArr = data.filter(
-      (match) => match.matchDateFirst === matchDateFirst
-    );
-
-    const matchInfoArr = matchInfo.filter(
-      (matchInfo) => matchInfo.matchDateFirst === matchDateFirst
-    );
+  const matchFilter = ({ matchDateFirst, matchDateSecond, matchDateThird }) => {
+    console.log({ matchDateFirst, matchDateSecond, matchDateThird });
 
     const matchDate = () => {
       for (let i = 0; i < data.length; i++) {
         if (data[i].matchDateFirst === matchDateFirst) {
+          const matchArr = data.filter(
+            (match) => match.matchDateFirst === matchDateFirst
+          );
+          const matchInfoArr = matchInfo.filter(
+            (matchInfo) => matchInfo.matchDateFirst === matchDateFirst
+          );
+
+          setFilteredData(matchArr);
+          setFilteredMatchInfo(matchInfoArr);
+
           return data[i].matchDateFirst;
+        }
+        if (data[i].matchDateSecond === matchDateSecond) {
+          const matchArr = data.filter(
+            (match) => match.matchDateSecond === matchDateSecond
+          );
+          const matchInfoArr = matchInfo.filter(
+            (matchInfo) => matchInfo.matchDateSecond === matchDateSecond
+          );
+
+          setFilteredData(matchArr);
+          setFilteredMatchInfo(matchInfoArr);
+
+          return data[i].matchDateSecond;
+        }
+        if (data[i].matchDateThird === matchDateThird) {
+          const matchArr = data.filter(
+            (match) => match.matchDateThird === matchDateThird
+          );
+          const matchInfoArr = matchInfo.filter(
+            (matchInfo) => matchInfo.matchDateThird === matchDateThird
+          );
+
+          setFilteredData(matchArr);
+          setFilteredMatchInfo(matchInfoArr);
+
+          return data[i].matchDateThird;
         }
       }
     };
 
-    setFilteredData(matchArr);
     setIsMatchDate(matchDate);
-    setFilteredMatchInfo(matchInfoArr);
     setIsFilter(isFilter);
   };
 

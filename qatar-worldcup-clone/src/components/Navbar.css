@@ -43,12 +43,23 @@ nav {
   font-weight: 600;
 }
 
-.list__container > li > a {
-  color: white;
+.list__container--text {
+  color: #c292a2;
+}
+
+.active--text {
+  border-bottom: 4px solid #fbeedc;
+  color: #fbeedc;
 }
 
 .select__icon {
   color: white;
   width: 25px;
   height: 22px;
+}
+
+@media (max-width: 1000px) {
+  .list__container {
+    display: none;
+  }
 }

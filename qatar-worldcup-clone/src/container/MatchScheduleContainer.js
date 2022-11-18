@@ -1,5 +1,5 @@
 import React from "react";
-import MatchSchedule from "./MatchSchedule";
+import MatchSchedule from "../components/MatchSchedule";
 import Date from "../utils/Date";
 
 const MatchScheduleContainer = ({ matchFilter, matchDate }) => {

@@ -13,7 +13,10 @@ const Date = ({ matchFilter, matchDate }) => {
         return (
           <div
             className={
-              date.matchDateFirst === matchDate && isFilter === true
+              (date.matchDateFirst === matchDate ||
+                date.matchDateSecond === matchDate ||
+                date.matchDateThird === matchDate) &&
+              isFilter === true
                 ? "day__container day-active"
                 : "day__container"
             }
@@ -21,6 +24,8 @@ const Date = ({ matchFilter, matchDate }) => {
             onClick={() => {
               matchFilter({
                 matchDateFirst: date.matchDateFirst,
+                matchDateSecond: date.matchDateSecond,
+                matchDateThird: date.matchDateThird,
                 isFilter: isFilter,
               });
               setIsFilter(true);
@@ -28,7 +33,10 @@ const Date = ({ matchFilter, matchDate }) => {
           >
             <div
               className={
-                date.matchDateFirst === matchDate && isFilter === true
+                (date.matchDateFirst === matchDate ||
+                  date.matchDateSecond === matchDate ||
+                  date.matchDateThird === matchDate) &&
+                isFilter === true
                   ? "month__box month-active"
                   : "month__box"
               }
@@ -37,7 +45,10 @@ const Date = ({ matchFilter, matchDate }) => {
             </div>
             <div
               className={
-                date.matchDateFirst === matchDate && isFilter === true
+                (date.matchDateFirst === matchDate ||
+                  date.matchDateSecond === matchDate ||
+                  date.matchDateThird === matchDate) &&
+                isFilter === true
                   ? "day__box day-box-active"
                   : "day__box"
               }

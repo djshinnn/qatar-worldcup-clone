@@ -47,3 +47,9 @@
 .sub {
   color: #969797;
 }
+
+@media (max-width: 1000px) {
+  .article__container {
+    display: none;
+  }
+}
