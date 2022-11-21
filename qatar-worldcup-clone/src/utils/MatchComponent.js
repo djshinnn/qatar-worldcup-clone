@@ -3,7 +3,7 @@ import "./MatchComponent.css";
 
 const MatchComponent = ({ data }) => {
   return (
-    <div>
+    <div style={{ flex: "2" }}>
       {data.map((data, idx) => (
         <div className="match__container" key={data.id}>
           <div className="record__container left">
@@ -13,8 +13,8 @@ const MatchComponent = ({ data }) => {
                 {data.win}승 {data.draw}무 {data.lose}패
               </div>
             </div>
-            <div style={{ marginLeft: "10px" }}>
-              <img src={data.img} alt="" width="80px" />
+            <div style={{ marginLeft: "5px" }}>
+              <img src={data.img} alt="" width="70px" />
             </div>
           </div>
         </div>

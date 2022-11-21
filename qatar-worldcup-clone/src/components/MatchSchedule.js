@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "./MatchSchedule.css";
-import RhombusContainer from "../utils/RhombusContainer";
 import { Link } from "react-router-dom";
-import { listData } from "../dummy/text";
+
+import RhombusContainer from "../utils/RhombusContainer";
 import useMatchInfo from "../context/matchContext";
+import { listData } from "../dummy/text";
+
+import "./MatchSchedule.css";
 
 const MatchSchedule = () => {
   const [isSelected, setIsSelected] = useState("전체");

@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 import naver from "../assets/images/mainpage/naver.svg";
 import qatar from "../assets/images/mainpage/qatar.svg";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import useMatchInfo from "../context/matchContext";
+import Sidebar from "./Sidebar";
 import { navData } from "../dummy/text";
+
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isSelected, setIsSelected] = useState("일정");
-
-  const activeHandler = (e) => {
-    console.log(e.target.name);
-
-    setIsSelected((prev) => {
-      return e.target.name;
-    });
-  };
+  const { isFilter, setIsFilter } = useMatchInfo();
 
   return (
     <nav>
@@ -29,7 +25,10 @@ const Navbar = () => {
             <li key={item.id}>
               <Link
                 name={item.name}
-                onClick={activeHandler}
+                onClick={(e) => {
+                  setIsSelected(e.target.name);
+                  setIsFilter(false);
+                }}
                 className={
                   isSelected === item.name
                     ? "list__container--text active--text"
@@ -43,7 +42,13 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="icon__container">
-          <GiHamburgerMenu className="select__icon" />
+          <Sidebar
+            onClick={(e) => {
+              setIsSelected(e.target.name);
+              setIsFilter(false);
+            }}
+          />
+          {console.log({ isSelected, isFilter })}
         </div>
       </div>
     </nav>

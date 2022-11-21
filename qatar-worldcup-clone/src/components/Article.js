@@ -10,7 +10,7 @@ const Article = () => {
       {article.map((article) => (
         <div className="article__box" key={article.id}>
           <div className="article__image--box">
-            <img src={article.img} alt="" width="130px" />
+            <img src={article.img} alt="" width="100px" />
           </div>
           <div className="article__num--box">
             <span>{article.id}</span>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./Match.css";
+
 import MatchComponent from "../utils/MatchComponent";
 import MatchComponent1 from "../utils/MatchComponent1";
 import MatchComponent2 from "../utils/MatchComponent2";
-import { matchInfo } from "../dummy/text";
 import useMatchInfo from "../context/matchContext";
+import { matchInfo } from "../dummy/text";
 
 const Match = ({ data, filteredData, matchInfoData, matchDate }) => {
   const [evenData, setEvenData] = useState([]);
@@ -31,7 +31,7 @@ const Match = ({ data, filteredData, matchInfoData, matchDate }) => {
 
   return (
     <div>
-      <div>
+      <div style={{ padding: "0 20px" }}>
         {isFilter ? <h2>{matchDate}</h2> : <h2>전체 일정</h2>}
 
         <div style={{ display: "flex", marginTop: "30px" }}>

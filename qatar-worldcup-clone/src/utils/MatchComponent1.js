@@ -7,7 +7,7 @@ const MatchComponent = ({ matchInfo }) => {
   const { isFilter } = useMatchInfo();
 
   return (
-    <div>
+    <div style={{ flex: "1" }}>
       {isFilter ? (
         <div>
           {matchInfo.map((data, idx) => (
@@ -41,7 +41,6 @@ const MatchComponent = ({ matchInfo }) => {
             )
             .map((data, idx) => (
               <div className="info__container" key={data.id}>
-                {console.log(data.matchDateFirst)}
                 <h4>* {data.group} *</h4>
                 <div className="info__box">
                   {data.month}.{data.date}. {data.time} 경기전
