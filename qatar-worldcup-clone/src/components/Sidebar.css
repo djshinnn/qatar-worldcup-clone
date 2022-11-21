@@ -1,7 +1,7 @@
 .sidebar__container {
   height: 80px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -31,7 +31,7 @@
 
 .sidebar__text {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 8px 0 8px 25px;
   list-style: none;

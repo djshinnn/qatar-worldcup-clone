@@ -1,9 +1,11 @@
 import React from "react";
-import "./MatchComponent.css";
 import { Link } from "react-router-dom";
+
 import useMatchInfo from "../context/matchContext";
 
-const MatchComponent = ({ matchInfo }) => {
+import "./MatchComponent.css";
+
+const MatchInfoComponent = ({ matchInfo }) => {
   const { isFilter } = useMatchInfo();
 
   return (
@@ -14,8 +16,9 @@ const MatchComponent = ({ matchInfo }) => {
             <div className="info__container" key={data.id}>
               <h4>* {data.group} *</h4>
               <div className="info__box">
-                {data.month}.{data.date}. {data.time} 경기전
+                {data.month}.{data.date}. {data.time}
               </div>
+              <div>경기전</div>
               <div className="preview__container">
                 <div className="preview__rhombus left"></div>
                 <div className="preview__box">
@@ -43,8 +46,9 @@ const MatchComponent = ({ matchInfo }) => {
               <div className="info__container" key={data.id}>
                 <h4>* {data.group} *</h4>
                 <div className="info__box">
-                  {data.month}.{data.date}. {data.time} 경기전
+                  {data.month}.{data.date}. {data.time}
                 </div>
+                <div>경기전</div>
                 <div className="preview__container">
                   <div className="preview__rhombus left"></div>
                   <div className="preview__box">
@@ -62,4 +66,4 @@ const MatchComponent = ({ matchInfo }) => {
   );
 };
 
-export default MatchComponent;
+export default MatchInfoComponent;

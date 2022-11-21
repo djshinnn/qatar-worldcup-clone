@@ -1,7 +1,8 @@
 import React from "react";
+
 import "./MatchComponent.css";
 
-const MatchComponent = ({ data }) => {
+const LeftMatchComponent = ({ data }) => {
   return (
     <div style={{ flex: "2" }}>
       {data.map((data, idx) => (
@@ -23,4 +24,4 @@ const MatchComponent = ({ data }) => {
   );
 };
 
-export default MatchComponent;
+export default LeftMatchComponent;

@@ -1,7 +1,8 @@
 import React from "react";
-import "./Article.css";
+
 import { article } from "../dummy/text";
-// import articleImg from "../assets/images/mainpage/article_1.jpeg";
+
+import "./Article.css";
 
 const Article = () => {
   return (

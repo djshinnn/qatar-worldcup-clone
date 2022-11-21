@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 import Match from "../components/Match";
-import "./MatchContainer.css";
-import { matchInfo } from "../dummy/text";
 import useMatchInfo from "../context/matchContext";
 import MatchScheduleContainer from "../container/MatchScheduleContainer";
+import { matchInfo } from "../dummy/text";
+
+import "./MatchContainer.css";
 
 const MatchContainer = () => {
   const [data, setData] = useState([]);

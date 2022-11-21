@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import MatchComponent from "../utils/MatchComponent";
-import MatchComponent1 from "../utils/MatchComponent1";
-import MatchComponent2 from "../utils/MatchComponent2";
+import LeftMatchComponent from "../utils/LeftMatchComponent";
+import MatchInfoComponent from "../utils/MatchInfoCompoennt";
+import RightMatchComponent from "../utils/RightMatchComponent";
 import useMatchInfo from "../context/matchContext";
 import { matchInfo } from "../dummy/text";
 
@@ -35,13 +35,13 @@ const Match = ({ data, filteredData, matchInfoData, matchDate }) => {
         {isFilter ? <h2>{matchDate}</h2> : <h2>전체 일정</h2>}
 
         <div style={{ display: "flex", marginTop: "30px" }}>
-          <MatchComponent data={evenData} />
+          <LeftMatchComponent data={evenData} />
           {isFilter ? (
-            <MatchComponent1 matchInfo={matchInfoData} />
+            <MatchInfoComponent matchInfo={matchInfoData} />
           ) : (
-            <MatchComponent1 matchInfo={matchInfo} />
+            <MatchInfoComponent matchInfo={matchInfo} />
           )}
-          <MatchComponent2 data={oddData} />
+          <RightMatchComponent data={oddData} />
         </div>
       </div>
     </div>

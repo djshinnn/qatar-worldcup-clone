@@ -1,8 +1,10 @@
 import React from "react";
-import { date } from "../dummy/text";
-import "./Date.css";
+
 import useMatchInfo from "../context/matchContext";
 import RhombusContainer from "./RhombusContainer";
+import { date } from "../dummy/text";
+
+import "./Date.css";
 
 const Date = ({ matchFilter, matchDate }) => {
   const { isFilter, setIsFilter } = useMatchInfo();
